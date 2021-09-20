@@ -1,0 +1,32 @@
+nav {
+  border: none;
+}
+
+nav .navbar-brand {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.banner {
+  height: 300px;
+  color: var(--cText);
+  background: linear-gradient(180deg, rgba(52,91,99,1) 0%, rgba(17,32,49,1) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner input {
+  height: fit-content;
+  border-radius: 50px;
+  background-color: var(--c1);
+  color: var(--cText);
+  border: none;
+}
+
+.banner input:focus {
+  background-color: var(--c4);
+  /* border-color: var(--cText); */
+  color: var(--c1);
+  font-weight: 500;
+}
