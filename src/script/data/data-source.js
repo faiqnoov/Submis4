@@ -20,17 +20,17 @@ class DataSource {
       })
   }
 
-  static getMovies(url) {
-    return fetch(url)
-      .then(resp => {
-        return resp.json();
-      })
-      .then(respJson => {
-        console.log(respJson.results);
+  // static getMovies(url) {
+  //   return fetch(url)
+  //     .then(resp => {
+  //       return resp.json();
+  //     })
+  //     .then(respJson => {
+  //       console.log(respJson.results);
 
-        return Promise.resolve(respJson.results);
-      })
-  }
+  //       return Promise.resolve(respJson.results);
+  //     })
+  // }
 }
 
 export default DataSource;
