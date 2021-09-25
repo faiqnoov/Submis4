@@ -13,6 +13,11 @@ class MovieList extends HTMLElement {
 
   renderError(message) {
     this.shadowDOM.innerHTML = `
+      <style>
+        h2 {
+          color: gray;
+        }
+      </style>
       <h2>${message}</h2>
     `;
   }

@@ -9,10 +9,9 @@ const searchURL = BASE_URL + '/search/movie?' + API_KEY;
 
 const main = () => {
 
-  // const movieList = document.querySelector('.movieList');
-  // const form = document.getElementById('searchForm');
+  const form = document.getElementById('searchForm');
   const movieList = document.querySelector("movie-list");
-  const searchEl = document.querySelector('#searchForm');
+  const searchEl = document.querySelector('input');
 
 
 
@@ -73,16 +72,13 @@ const main = () => {
   };
 
   const fallbackResult = message => {
-    movieList.renderError(massage);
+    movieList.renderError(message);
   }
 
-  // searchEl.onsubmit = onSearchSubmited;
-  searchEl.addEventListener('keyup', (e) => {
-    if (e.key === 13) {
-      e.preventDefault();
-      alert("enter ditekan");
-      onSearchSubmited();
-    }
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert("enter ditekan");
+    onSearchSubmited();
   })
 }
 
