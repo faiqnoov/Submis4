@@ -73,7 +73,6 @@ const main = () => {
   };
 
   const fallbackResult = message => {
-    // console.log(message);
     movieList.renderError(massage);
   }
 
