@@ -1,3 +1,5 @@
+const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+
 class MovieElement extends HTMLElement {
   constructor() {
     super();

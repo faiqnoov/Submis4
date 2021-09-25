@@ -1,19 +1,11 @@
 import '../component/movie-list.js'
 import DataSource from "../data/data-source.js";
 
-const API_KEY = 'api_key=1ebefdee75674063eadb23b4025632b1';
-const BASE_URL = 'https://api.themoviedb.org/3';
-const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
-const IMG_URL = 'https://image.tmdb.org/t/p/w500';
-const searchURL = BASE_URL + '/search/movie?' + API_KEY;
-
 const main = () => {
 
   const form = document.getElementById('searchForm');
   const movieList = document.querySelector("movie-list");
   const searchEl = document.querySelector('input');
-
-
 
   // function showMovies(data) {
   //   movieList.innerHTML = '';
@@ -63,6 +55,7 @@ const main = () => {
       const result = await DataSource.searchMovie(searchEl.value);
       renderResult(result);
     } catch (message) {
+      console.log("wkwk error")
       fallbackResult(message);
     }
   };
@@ -77,7 +70,7 @@ const main = () => {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    alert("enter ditekan");
+    // alert("enter ditekan");
     onSearchSubmited();
   })
 }

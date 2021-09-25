@@ -7,13 +7,13 @@ const searchURL = BASE_URL + '/search/movie?' + API_KEY;
 // kenapa harus dibuat class? kok gak function aja?
 class DataSource {
   static searchMovie(keyword) {
-    // return fetch(`${searchURL}&query=${keyword}`)
-    return fetch(`https://api.themoviedb.org/3/search/movie?api_key=1ebefdee75674063eadb23b4025632b1&query=${keyword}`)
+    return fetch(`${searchURL}&query=${keyword}`)
       .then(resp => {
         return resp.json();
       })
       .then(respJson => {
         if (respJson.results) {
+          console.log(respJson.results);
           return Promise.resolve(respJson.results);
         } else {
           return Promise.reject(`${keyword} is not found`)
