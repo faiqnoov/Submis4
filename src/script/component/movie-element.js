@@ -26,6 +26,8 @@ class MovieElement extends HTMLElement {
           font-size: 20px;
           font-weight: 500;
           color: var(--cText);
+          margin: 0;
+          align-self: center;
         }
         
         .movieEl .movie-info .rating {

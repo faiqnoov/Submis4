@@ -10,8 +10,8 @@ const main = () => {
   const popularMovies = async () => {
     try {
       const result = await DataSource.getPopularMovies();
-      renderResult(result);
-    } catch {
+      renderResult(result, 'Top 20 popular movies');
+    } catch (message) {
       fallbackResult(message);
     }
   }
@@ -19,15 +19,16 @@ const main = () => {
   const onSearchSubmited = async () => {
     try {
       const result = await DataSource.searchMovie(searchEl.value);
-      renderResult(result);
+      renderResult(result, `Movies with "${searchEl.value}" keyword`);
     } catch (message) {
       console.log("wkwk error")
       fallbackResult(message);
     }
   };
 
-  const renderResult = results => {
+  const renderResult = (results, text) => {
     movieList.movies = results;
+    movieList.text = text;
   };
 
   const fallbackResult = message => {

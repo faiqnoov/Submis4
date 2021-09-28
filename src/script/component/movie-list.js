@@ -1,6 +1,11 @@
 import './movie-element.js';
 
 class MovieList extends HTMLElement {
+  set text(text) {
+    this._text = text;
+    this.render();
+  }
+
   set movies(movies) {
     this._movies = movies;
     this.render();
@@ -9,17 +14,33 @@ class MovieList extends HTMLElement {
   renderError(message) {
     this.innerHTML = `
       <style>
-        h2 {
+        h3 {
           color: gray;
         }
       </style>
-      <h2>${message}</h2>
+      <h3>${message}</h3>
     `;
   }
 
   render() {
     this.innerHTML = "";
     this.innerHTML += `
+    <style>
+      .subjudul {
+        height: 50px;
+      }
+      .subjudul h2 {
+        text-align: center;
+        align-self: center;
+        color: var(--cText);
+      }
+      .movieList {
+        margin-top: 50px;
+      }
+    </style>
+    <div class="subjudul">
+      <h2>${this._text}</h2>
+    </div>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 movieList">
     </div>
     `;
