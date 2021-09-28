@@ -1,29 +1,13 @@
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
 class MovieElement extends HTMLElement {
-  constructor() {
-    super();
-    this.shadowDOM = this.attachShadow({ mode: "open" });
-  }
-
   set movie(movie) {
     this._movie = movie;
     this.render();
   }
 
-  // set color(vote) {
-  //   if (vote >= 8) {
-  //     return 'green'
-  //   } else if (vote >= 5) {
-  //     return 'orange'
-  //   } else {
-  //     return 'red'
-  //   }
-  // }
-  // ${this.color(this._movie.vote_average)}
-
   render() {
-    this.shadowDOM.innerHTML = `
+    this.innerHTML = `
       <style>
         .movieEl {
           border: none;
