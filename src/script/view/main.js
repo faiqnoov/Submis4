@@ -7,6 +7,15 @@ const main = () => {
   const movieList = document.querySelector("movie-list");
   const searchEl = document.querySelector('input');
 
+  const popularMovies = async () => {
+    try {
+      const result = await DataSource.getPopularMovies();
+      renderResult(result);
+    } catch {
+      fallbackResult(message);
+    }
+  }
+
   const onSearchSubmited = async () => {
     try {
       const result = await DataSource.searchMovie(searchEl.value);
@@ -24,6 +33,8 @@ const main = () => {
   const fallbackResult = message => {
     movieList.renderError(message);
   }
+
+  popularMovies();
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
