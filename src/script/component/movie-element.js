@@ -11,6 +11,17 @@ class MovieElement extends HTMLElement {
     this.render();
   }
 
+  // set color(vote) {
+  //   if (vote >= 8) {
+  //     return 'green'
+  //   } else if (vote >= 5) {
+  //     return 'orange'
+  //   } else {
+  //     return 'red'
+  //   }
+  // }
+  // ${this.color(this._movie.vote_average)}
+
   render() {
     this.shadowDOM.innerHTML = `
       <style>
@@ -80,11 +91,11 @@ class MovieElement extends HTMLElement {
         <div class="card movieEl">
           <img
             src="${IMG_URL + this._movie.poster_path}"
-            class="card-img-top" alt="${this._movie.title}">
+            class="card-img-top" alt="poster">
 
           <div class="movie-info">
-            <h2>${title}</h2>
-            <span class="rating ${getColor(this._movie.vote_average)}">${this._movie.vote_average}</span>
+            <h2>${this._movie.title}</h2>
+            <span class="rating">${this._movie.vote_average}</span>
           </div>
 
           <div class="overview">
@@ -96,8 +107,6 @@ class MovieElement extends HTMLElement {
 
     `;
   }
-
-
 }
 
 customElements.define("movie-element", MovieElement);
