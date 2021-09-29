@@ -21,7 +21,6 @@ const main = () => {
       const result = await DataSource.searchMovie(searchEl.value);
       renderResult(result, `Movies with "${searchEl.value}" keyword`);
     } catch (message) {
-      console.log("wkwk error")
       fallbackResult(message);
     }
   };
@@ -39,7 +38,6 @@ const main = () => {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    // alert("enter ditekan");
     onSearchSubmited();
   })
 }
