@@ -33,6 +33,7 @@ class MovieList extends HTMLElement {
         text-align: center;
         align-self: center;
         color: var(--cText);
+        font-weight: 300;
       }
       .movieList {
         margin-top: 50px;
