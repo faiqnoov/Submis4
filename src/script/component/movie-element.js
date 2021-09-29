@@ -42,18 +42,6 @@ class MovieElement extends HTMLElement {
           font-weight: 500;
         }
         
-        .movieEl .movie-info .green {
-          color: green;
-        }
-        
-        .movieEl .movie-info .orange {
-          color: orange;
-        }
-        
-        .movieEl .movie-info .red {
-          color: red;
-        }
-        
         .movieEl .overview{
           padding: 10px;
         }
